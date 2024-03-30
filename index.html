@@ -27,6 +27,7 @@
         </div>
         <div class="auth">
             <h2>Inicio de Sesión con redirección</h2>
+            
             <form id="loginForm" onsubmit="validarUsuario(event)">
                 <input type="text" id="username" name="username" placeholder="Usuario">
                 <input type="password" id="password" name="password" placeholder="Contraseña">
@@ -39,7 +40,7 @@
                     var usuario = document.getElementById('username').value;
                     // Asumiendo 'admin' como nombre de usuario del administrador
                     if(usuario === 'admin') {
-                        window.location.href = 'https://frameworkc14.github.io/cyber/admin.html'; // Redirecciona a la página del administrador
+                        window.location.href = 'admin.html'; // Redirecciona a la página del administrador
                     } else {
                         window.location.href = 'https://frameworkc14.github.io/cyber/customer.html'; // Redirecciona a la página del cliente
                     }
