@@ -27,9 +27,9 @@
         </div>
         <div class="auth">
             <h2>Inicio de Sesión2</h2>
-            <form>
-                <input type="text" placeholder="Usuario">
-                <input type="password" placeholder="Contraseña">
+            <form id="loginForm" onsubmit="validarUsuario(event)">
+                <input type="text" id="username" name="username" placeholder="Usuario">
+                <input type="password" id="password" name="password" placeholder="Contraseña">
                 <button type="submit">Iniciar Sesión</button>
             </form>
 
@@ -38,13 +38,20 @@
                     e.preventDefault(); // Evita que el formulario se envíe de forma predeterminada
                     var usuario = document.getElementById('username').value;
                     // Asumiendo 'admin' como nombre de usuario del administrador
-                    if(usuario === 'admin') {
-                        //alert("Bienvenido Administrador");
+                    if(usuario == 'admin' &&  password.value == 'admin') {
+                        alert("Bienvenido Administrador");
                         window.location.href = 'admin.html'; // Redirecciona a la página del administrador
-                    } else {
-                       // alert("Bienvenido Cliente");
+                    } 
+                    if (usuario == 'cliente' &&  password.value == 'cliente') {
+                        alert("Bienvenido Cliente");
                         window.location.href = 'customer.html'; // Redirecciona a la página del cliente
                     }
+                    alert("Requieres un usuario válido");
+                    document.getElementById(Login.userNameInput).value="";
+				    document.getElementById(Login.passwordInput).value="";
+				
+                     return false;
+
                 }
             </script>
         </div>
